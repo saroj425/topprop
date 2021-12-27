@@ -1,0 +1,126 @@
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+    position: relative;
+  }
+  .curv-sec{
+    position: absolute;
+    height: 60vh;
+    width: 100%;
+  }
+  .curv-sec img{
+    max-height: 400px;
+    width: 100%;
+  }
+  .login-sec{
+    position: absolute;
+    width: 100%;
+    top: 15%;
+  }
+  .login-sec .left{
+    padding: 20px 100px;
+  }
+  .left .top-text h4{
+        font-size: 2.5rem;
+        color: #fff;
+        margin-bottom: 10px;
+        font-weight: 600;
+   }
+   .left .top-text p{
+       font-size: 1.5rem;
+       color: #fff;
+       font-weight: 400;
+   }
+  .login-div{
+    max-width: 386px;
+    height: auto;
+    position: relative;
+    margin: 0 auto;
+    top: 35%;
+  }
+  .inner-login-div{
+    padding: 15px 30px;
+    border: 1px solid #d3d3d3;
+    border-radius: 50px;
+    margin-left: 10px;
+    background-color: #2A4A97;
+    color: #fff;
+    
+  }
+  .login-div h2{
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  .otp-div{
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  .otp{
+    border: none;
+    background-color: #ffdead00;
+    border-bottom: 2px solid #fff;
+    border-radius: 0;
+  }
+  .spanddiv span{
+    font-size: 1.5rem;
+    
+  }
+  .spanddiv{
+    margin-bottom: 20px;
+  }
+  .spanddiv span a{
+    font-size: 1.8rem;
+    color: #000; 
+    text-decoration: none; 
+  }
+  .buttondiv{
+    margin: 0 auto;
+  }
+  .buttondiv button{
+    max-width: 180px;
+    margin: 0 auto;
+    background: #F8B613;
+    color: #000;
+    font-size: 1.8rem;
+    border-radius: 15px;
+  }
+  .social-login{
+      text-align: center;
+  }
+  .social-login button{
+    border-radius: 50%;
+    border: 2px solid #fff;
+    margin: 0px 10px 10px 10px;
+  }
+  .social-login img{
+      width: 40px;
+      height: 40px;
+  }
+  
+  @media only screen and (max-width: 600px) {
+      body {
+        background-color: lightblue;
+      }
+      .curv-sec{
+        position: absolute;
+        top: 79%;
+        bottom: 0;
+        left: 0px;
+        right: 0px;
+        height: 80vh;
+      }
+      .login-div {
+        max-width: 300px;
+        height: auto;
+        margin: 0 auto;
+        padding: 15px;
+        position: absolute;
+        top: 30%;
+        left: 0%;
+        right: 0;
+        border: 1px solid #d3d3d3;
+        border-radius: 20px;
+        background-color: #2A4A97;
+        color: #fff;
+    }
+  }

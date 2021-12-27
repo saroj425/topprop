@@ -1,0 +1,77 @@
+.newproject{
+    padding: 40px 0px;
+    
+}
+.newprojtext h2{
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.newprojtext .btn{
+    margin: 0px 10px;
+    padding: 5px 10px;
+    font-size: 1.5rem;
+    background: #07D290;
+    border: 0;
+    font-weight: 600;
+}
+.newprojslider .left{
+    padding: 40px 0;
+}
+.left .leftdiv{
+    background: #F0F4F7;
+    min-height: 250px;
+    padding: 0 20px;
+    position: absolute;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+.leftdiv h2{
+    font-size: 3rem;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.leftdiv .viewmorebtn{
+    background: #ffdead00;
+    color: #4170B1;
+    font-size: 1.5rem;
+    padding: 1px 15px;
+    border: 1px solid #4170B1;
+}
+.newprojslider .right{
+    margin-left: -15px;
+}
+.newpropcard{
+    width: 95% !important;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.newpropcard .card-header{
+    min-height: 40px;
+    background: #fff;
+    border: 0;
+}
+.newpropcard .card-header p{
+    font-size: 1.6em;
+    font-weight: 600;
+}
+.newpropcard .card-header a{
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #000;
+}
+.newpropcard .tag{
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+.btnviewopp{
+    padding: 2px 15px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-top: 10px;
+    background-color: #07D290;
+    border: 1px solid #07D290;
+    border-radius: 5px;
+}

@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Montserrat:ital,wght@0,200;0,300;0,400;1,100&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
+
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+body{
+    overflow-x: hidden;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+p{
+    margin-bottom: 0;
+}
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .banner-content h2{
+        display: none;
+    }
+    .forsalesec .salelist {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .how-div {
+        margin-bottom: 10px;
+        min-width: 100%;
+        background-color: #fff;
+        position: relative;
+        box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+        border-bottom-left-radius: 20px;
+        border-top-right-radius: 30px;
+    }
+    .hwoitworks-inner {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .allright {
+        left: 0%;
+    }
+}
+

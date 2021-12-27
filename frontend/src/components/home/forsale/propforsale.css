@@ -1,0 +1,57 @@
+.forsalesec{
+    padding: 40px 0;
+}
+.propertysalebtn{
+    text-align: center;
+}
+.propertysalebtn .btn{
+    font-size: 1.7rem;
+    margin: 10px;
+}
+.forsalesec .salelist{
+    display: flex;
+    align-items: center;
+    background: #EEEFF1;
+    padding: 5px;
+    width: 24%;
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin: 5px;
+}
+.salelist .imagediv{
+    position: relative;
+}
+.salelist .right{
+    margin-left: 10px;
+}
+.salelist .right h4{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.salelist .right p{
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+.salelist .right .fa-car{
+    font-size: 1.6rem;
+    color: #000;
+}
+.right .alignright{
+    text-align: right;
+}
+
+.salelist .right a{
+    text-decoration: none;
+    color: #07D290;
+    font-size: 1.5rem;
+}
+
+.imagediv .imagedivinner{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.imagedivinner .fa-heart{
+    font-size: 20px;
+    color: coral;
+}

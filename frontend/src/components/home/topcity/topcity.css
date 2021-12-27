@@ -1,0 +1,54 @@
+.topcitysec{
+    padding: 40px 0px;
+}
+.topcitytitle h2{
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+.topcityslider{
+    width: 98% !important;
+    background: #f6f6f6;
+    padding: 10px;
+    border-radius: 15px;
+}
+.topcityslider h4{
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: #000;
+}
+.topcityslider p{
+    font-size: 1.4rem;
+    color: #000;
+    font-weight: 400;
+}
+.citydetails{
+    max-height: 135px;
+    overflow: hidden;
+}
+.slick-prev{
+    color: transparent;
+    background: #fcfcfcbd;
+}
+.slick-prev:before{
+    font-family: 'slick';
+    font-size: 25px;
+    line-height: 1;
+    opacity: .75;
+    color: #a19b9b;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.btnshowmore{
+    padding: 2px 21px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-top: 10px;
+    background-color: #07D290;
+    border: 1px solid #07D290;
+    border-radius: 5px;
+    color: #fff;
+    border-radius: 20px;
+    margin-top: 50px;
+}

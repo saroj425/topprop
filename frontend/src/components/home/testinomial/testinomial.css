@@ -1,0 +1,31 @@
+.testinomial{
+    padding: 40px 0px;
+}
+.testinomialheading{
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.newvideo{
+    position: absolute; 
+    right: 0; 
+    bottom: 0;
+    min-width: 200px; 
+    min-height: 160px;
+    width: auto; 
+    height: auto; 
+    z-index: 1;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.overlay {
+    background: rgba(98, 33, 148, 0.4);
+    height: 160px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}

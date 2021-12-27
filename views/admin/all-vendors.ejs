@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+        <title>Dashboard - Top Prop Mart</title>
+		<% include ./common/header-script %>
+    </head>
+    <body>
+        <div class="main-wrapper">
+            <% include ./common/header %>
+            <% include ./common/side-menu %>
+            <div class="page-wrapper">
+                <div class="content container-fluid">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="adminpage-heading">
+                                <div>
+                                    <h2>All Vendors</h2>
+                                </div>
+                                <div class="btn-add">
+                                    <a href="/admin/add-vendor" >Add Vendor</a>
+                                </div>
+                            </div>
+						</div>
+					</div>
+				</div>
+                <div class="content container-fluid ">
+                    <div class="row filter-row mt-5">
+                        <div class="col-sm-3 col-xs-6">  
+                             <div class="form-group form-focus">
+                                 <label class="control-label">Vendor ID</label>
+                                 <input type="text" class="form-control floating" />
+                             </div>
+                        </div>
+                        <div class="col-sm-3 col-xs-6">  
+                             <div class="form-group form-focus">
+                                 <label class="control-label">Vendor Name</label>
+                                 <input type="text" class="form-control floating" />
+                             </div>
+                        </div>
+                       
+                        <div class="col-sm-3 col-xs-6">  
+                             <a href="#" class="btn btn-success btn-block"> Search </a>  
+                        </div>     
+                    </div>
+                    <div class="row staff-grid-row">
+						<div class="col-md-4 col-sm-4 col-xs-6 col-lg-3">
+							<div class="profile-widget">
+								<div class="profile-img">
+									<a href="profile.html"><img class="avatar" src="assets/img/user.jpg" alt=""></a>
+								</div>
+								<div class="dropdown profile-action">
+									<a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+									<ul class="dropdown-menu pull-right">
+										<li><a href="#" data-toggle="modal" data-target="#edit_vendor"><i class="fa fa-pencil m-r-5"></i> Edit</a></li>
+										<li><a href="#" data-toggle="modal" data-target="#delete_vendor"><i class="fa fa-trash-o m-r-5"></i> Delete</a></li>
+                                        <li><a href="#" data-toggle="modal" data-target="#block_vendor"><i class="fa fa-trash-o m-r-5"></i> Block</a></li>
+									</ul>
+								</div>
+								<h4 class="user-name m-t-10 m-b-0 text-ellipsis"><a href="/profile">Saroj Kumar Pandey</a></h4>
+								<div class="small text-muted"></div>
+							</div>
+						</div>
+					</div>
+                </div>
+
+                </div>
+				<% include ./common/side-notification %>		
+			</div>
+        </div>
+        <% include ./common/all-modals %>
+		<div class="sidebar-overlay" data-reff="#sidebar"></div>
+        <% include ./common/footer-script %>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+.lookingtoinvest{
+    background-color: #CCCCFE;
+    min-height: 250px;
+    padding: 40px 0px;
+    
+}
+.lookingtoinvest h2{
+    font-size: 4rem;
+    color: #000;
+    font-weight: 600;
+}
+.lookingtoinvest p{
+    font-size: 2rem;
+    color: #000;
+    font-weight: 400;
+}
+.post-relative{
+    position: relative;
+    /* padding: 20px 0px; */
+    padding: 50px 0px 100px 0px;
+}
+.investmost-div{
+    position: absolute;
+    top: 54%;
+    width: 100%;
+}
+.investmost{
+    background: #fff;
+    padding: 50px 20px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    overflow-wrap: break-word;
+}
+.investmost h4{
+    font-size: 2rem;
+    font-weight: 600;
+    margin-left: 10px;
+}
+.investmost p{
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-left: 10px;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+        <title><%=title;%> - Top Prop Mart</title>
+		<% include ./common/header-script %>
+    </head>
+    <body>
+        <div class="main-wrapper">
+            <% include ./common/header %>
+            <% include ./common/side-menu %>
+            <div class="page-wrapper">
+                <div class="content container-fluid">
+					<div class="row">
+						<div class="col-md-12" style="margin-bottom: 40px;">
+							<div class="adminpage-heading">
+                                <div>
+                                    <h2>All Testinomials</h2>
+                                </div>
+                                <div class="btn-add">
+                                    <a href="/admin/add-blogpost" >Add Post</a>
+                                </div>
+                            </div>
+						</div>
+					</div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="table-responsive">
+                                <table id="allblog" class="display table table-striped custom-table m-b-0" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th >Title</th>
+                                            <th>Slug</th>
+                                            <th>Author</th>
+                                            <th>Body</th>
+                                            <th>Short Description</th>
+                                            <th>Image</th>
+                                            <th>Publish Date/Time</th>
+                                            <th>Status</th>
+                                            <th class="text-right">Action</th>
+                                        </tr> 
+                                    </thead>
+                                    <tbody>
+                                        
+                                    </tbody>
+                                    
+                                </table>
+                            </div>
+                        </div>
+                     </div>
+				</div>
+				<% include ./common/side-notification %>		
+			</div>
+        </div>
+		<div class="sidebar-overlay" data-reff="#sidebar"></div>
+        <% include ./common/footer-script %>
+
+        <script>
+            $(document).ready(function() {
+                $('#allblog').DataTable();
+            } );
+        </script>
+    </body>
+</html>

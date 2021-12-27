@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+        <title><%=title;%> - Top Prop Mart</title>
+		<% include ./common/header-script %>
+    </head>
+    <body>
+        <div class="main-wrapper">
+            <% include ./common/header %>
+            <% include ./common/side-menu %>
+            <div class="page-wrapper">
+                <div class="content container-fluid">
+					<div class="row">
+						<div class="col-md-12">
+							<h2>Add Projects</h2>
+						</div>
+					</div>
+                    <div class="row">
+                        <div class="col-md-12 post-div">
+                            <form id="msform" action="/admin/post-data" method="post">
+                                <div class="form-card">
+                                    <div class="prop-details">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h2 class="fs-title">Provide details about your Property:</h2>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 ">
+                                                <p><b>Looking For</b></p>
+                                                <div class="radio-div">
+                                                    <input type="radio" id="radio-btn-1" name="radio-btns-sale">
+                                                    <label for="radio-btn-1" class="btn">Sale</label>
+                                                    <input type="radio" id="radio-btn-2" name="radio-btns-rent">
+                                                    <label for="radio-btn-2" class="btn">Rent</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 ">
+                                                <p><b>Building Type</b></p>
+                                                <div class="radio-div">
+                                                    <input type="radio" id="radio-btn-3" name="building-type" value="residential" onclick="residential()">
+                                                    <label for="radio-btn-3" class="btn" onclick="residential()">Residential</label>
+                                                    <input type="radio" id="radio-btn-4" name="building-type" value="commercial" onclick="commercial()">
+                                                    <label for="radio-btn-4" class="btn" onclick="commercial()">Commercial</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 d-none" id="res-div">
+                                                <p><b>Residential Type</b></p>
+                                                <div class="radio-div ">
+                                                    <input type="radio" id="radio-btn-5" name="radio-btns">
+                                                    <label for="radio-btn-5" class="btn" onclick="showaptsize()">Apartment</label>
+                                                    <input type="radio" id="radio-btn-6" name="radio-btns">
+                                                    <label for="radio-btn-6" class="btn">Villa</label>
+                                                    <input type="radio" id="radio-btn-7" name="radio-btns">
+                                                    <label for="radio-btn-7" class="btn">Plot</label>
+                                                    <input type="radio" id="radio-btn-8" name="radio-btns">
+                                                    <label for="radio-btn-8" class="btn">Builder Floor</label>
+                                                    <input type="radio" id="radio-btn-9" name="radio-btns">
+                                                    <label for="radio-btn-9" class="btn">Independent House</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 d-none" id="com-div">
+                                                <p><b>Commercial Type</b></p>
+                                                <div class="radio-div">
+                                                    <input type="radio" id="radio-btn-10" name="radio-btns">
+                                                    <label for="radio-btn-10" class="btn">Office Space</label>
+                                                    <input type="radio" id="radio-btn-11" name="radio-btns">
+                                                    <label for="radio-btn-11" class="btn">Shop</label>
+                                                    <input type="radio" id="radio-btn-12" name="radio-btns">
+                                                    <label for="radio-btn-12" class="btn">Land</label>
+                                                    <input type="radio" id="radio-btn-13" name="radio-btns">
+                                                    <label for="radio-btn-13" class="btn">Office Space in IT/SEZ</label>
+                                                    <input type="radio" id="radio-btn-14" name="radio-btns">
+                                                    <label for="radio-btn-14" class="btn">Showroom</label>
+                                                    <input type="radio" id="radio-btn-15" name="radio-btns">
+                                                    <label for="radio-btn-15" class="btn">Warehouse</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="fieldlabels">Slug/Url End Point: *</label> 
+                                                <input type="text" name="slug" value="" /> 
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="fieldlabels">Project/Building Name: *</label> 
+                                                <input type="text" name="projectname" placeholder="Please enter project name" /> 
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="fieldlabels">City: *</label> 
+                                                <input type="text" name="city" placeholder="Please enter city name" /> 
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="fieldlabels">Locality: *</label> 
+                                                <input type="text" name="locality" placeholder="Please enter project locality" /> 
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="fieldlabels">Min Price: *</label>
+                                                <input type="number" name="minprice" placeholder="Please enter project price" />
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="fieldlabels">Max Price: *</label>
+                                                <input type="number" name="maxprice" placeholder="Please enter project price" />
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="fieldlabels">Please Select the Unit type and Configuration</label>
+                                                <select name="unittype" class="form-control">
+                                                    <option value="">Select unit type</option>
+                                                    <option value="">1 BHK</option>
+                                                    <option value="">2 BHK</option>
+                                                    <option value="">3 BHK</option>
+                                                    <option value="">4 BHK</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="fieldlabels">Size: *</label>
+                                                <input type="text" name="size" placeholder="Please enter buildup size" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="aditional-details">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h2 class="fs-title">Additional Property Details:</h2>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 ">
+                                                <p><b>Additional Rooms</b></p>
+                                                <div class="add-room">
+                                                    <div data-toggle="buttons">
+                                                        <label class="btn checked-button">
+                                                        <input type="checkbox" name="poojaroom" checked autocomplete="off">Pooja Room
+                                                        </label>
+                                                        <label class="btn checked-button">
+                                                        <input type="checkbox" name="serventroom" checked autocomplete="off"> Servant Room
+                                                        </label>
+                                                        <label class="btn checked-button">
+                                                        <input type="checkbox" name="studyroom" checked autocomplete="off"> Study Room
+                                                        </label>
+                                                        <label class="btn checked-button">
+                                                        <input type="checkbox" name="extraroom" checked autocomplete="off"> Extra Room
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 ">
+                                                <p><b>Possession Status</b></p>
+                                                <div class="pos-status">
+                                                    <div class="radio-div">
+                                                        <input type="radio" id="radio-btn-16" name="radio-btns">
+                                                        <label for="radio-btn-16" class="btn">Ready To Move</label>
+                                                        <input type="radio" id="radio-btn-17" name="radio-btns">
+                                                        <label for="radio-btn-17" class="btn">Under Construction</label> 
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label class="fieldlabels">Furnishing Status</label>
+                                                <select name="furnishingstatus" class="form-control">
+                                                    <option value="">Select Status</option>
+                                                    <option value="Furnished">Furnished</option>
+                                                    <option value="Semi-Furnished">Semi-Furnished</option>
+                                                    <option value="Unfurnished">Unfurnished</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="fieldlabels">Age of Property (Years)</label>
+                                                <select name="ageofproperty" class="form-control">
+                                                    <option value="">Select Property Age</option>
+                                                    <option value="">0-1</option>
+                                                    <option value="">2-4</option>
+                                                    <option value="">5-7</option>
+                                                    <option value="">8-10</option>
+                                                    <option value="">10+</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="fieldlabels">Number of Rooms</label>
+                                                <select name="noofrooms" class="form-control">
+                                                    <option value="">Select Status</option>
+                                                    <option value="1">1</option>
+                                                    <option value="1.5">1.5</option>
+                                                    <option value="2">2</option>
+                                                    <option value="2.5">2.5</option>
+                                                    <option value="3">3</option>
+                                                    <option value="3.5">3.5</option>
+                                                    <option value="4">4</option>
+                                                    <option value="4.5">4.5</option>
+                                                    <option value="5">5</option>
+                                                    <option value="5.5">5.5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="6+">6+</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="fieldlabels">Number of Bathroom</label>
+                                                <select name="noofbathrooms" class="form-control">
+                                                    <option value="">Select Status</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="6+">6+</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="fieldlabels">Number of Parking</label>
+                                                <select name="noofbathrooms" class="form-control">
+                                                    <option value="">Select Parking</option>
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="6+">6+</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="fieldlabels">View/Facing</label>
+                                                <select name="noofbathrooms" class="form-control">
+                                                    <option value="">Select View/Facing</option>
+                                                    <option value="">Beach View</option>
+                                                    <option value="">East</option>
+                                                    <option value="">Garden Facing</option>
+                                                    <option value="">Golf Course</option>
+                                                    <option value="">North</option>
+                                                    <option value="">North East</option>
+                                                    <option value="">North West</option>
+                                                    <option value="">Park Facing</option>
+                                                    <option value="">South</option>
+                                                    <option value="">South East</option>
+                                                    <option value="">South West</option>
+                                                    <option value="">West</option>
+                                                </select>
+                                            </div>
+                                            
+                                            <div class="col-md-6">
+                                                <label class="fieldlabels">Tower/Block</label>
+                                                <input type="text" name="towerblock" placeholder="Please enter Block or Tower Name" />
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="fieldlabels">Total Floor Count</label>
+                                                <input type="text" name="towerblock" placeholder="Please enter Block or Tower Name" />
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="fieldlabels">Floor Number</label>
+                                                <select name="noofbathrooms" class="form-control">
+                                                    <option value="1">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                    <option value="11">11</option>
+                                                    <option value="12">12</option>
+                                                    <option value="13">13</option>
+                                                    <option value="14">14</option>
+                                                    <option value="15">15</option>
+                                                    <option value="16">16</option>
+                                                    <option value="17">17</option>
+                                                    <option value="18">18</option>
+                                                    <option value="19">19</option>
+                                                    <option value="20">20</option>
+                                                    <option value="21">21</option>
+                                                    <option value="22">22</option>
+                                                    <option value="23">23</option>
+                                                    <option value="24">24</option>
+                                                    <option value="25">25</option>
+                                                    <option value="26">26</option>
+                                                    <option value="27">27</option>
+                                                    <option value="28">28</option>
+                                                    <option value="29">29</option>
+                                                    <option value="30">30</option>
+                                                    <option value="31">31</option>
+                                                    <option value="32">32</option>
+                                                    <option value="33">33</option>
+                                                    <option value="34">34</option>
+                                                    <option value="35">35</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="fieldlabels">Unit Number.</label>
+                                                <input type="text" name="unitnumber" placeholder="Please enter Unit number" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="aminities">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h2 class="fs-title">Amenities Details:</h2>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-3 amenities">
+                                                <label for="gymnasium"> Gymnasium</label>
+                                                <input type="checkbox" id="gymnasium" class="mb-0" name="gymnasium" value="Gymnasium">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="gymnasium"> Swimming Pool</label>
+                                                <input type="checkbox" id="swimmingpool" class="mb-0" name="swimmingpool" value="Swimming Pool">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="gymnasium"> Badminton Court</label>
+                                                <input type="checkbox" id="badmintoncourt" class="mb-0" name="badmintoncourt" value="Badminton Court">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="gymnasium"> Tennis Court</label>
+                                                <input type="checkbox" id="tenniscourt" class="mb-0" name="tenniscourt" value="Tennis Court(s)">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="gymnasium"> Squash Court</label>
+                                                <input type="checkbox" id="squashcourt" class="mb-0" name="squashcourt" value="Squash Court">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="gymnasium"> Kids' Play Areas</label>
+                                                <input type="checkbox" id="kidsplayareas" class="mb-0" name="kidsplayareas" value="Kids' Play Areas">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="gymnasium"> Jogging / Cycle Track</label>
+                                                <input type="checkbox" id="joggingcycletrack" class="mb-0" name="joggingcycletrack" value="Jogging / Cycle Track">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="gymnasium"> Power Backup</label>
+                                                <input type="checkbox" id="powerbackup" class="mb-0" name="powerbackup" value="Power Backup">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="centralac"> Central AC</label>
+                                                <input type="checkbox" id="centralac" class="mb-0" name="centralac" value="Central AC">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="gymnasium"> Central Wi-Fi</label>
+                                                <input type="checkbox" id="centralwifi" class="mb-0" name="centralwifi" value="Central Wi-Fi">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="gymnasium"> Attached Market</label>
+                                                <input type="checkbox" id="attachedmarket" class="mb-0" name="attachedmarket" value="Attached Market">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="gymnasium"> Restaurant</label>
+                                                <input type="checkbox" id="restaurant" class="mb-0" name="restaurant" value="Restaurant">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="gymnasium"> Home Automation</label>
+                                                <input type="checkbox" id="homeautomation" class="mb-0" name="homeautomation" value="Home Automation">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="gymnasium"> 24 x 7 Security</label>
+                                                <input type="checkbox" id="24x7security" class="mb-0" name="24x7security" value="24 x 7 Security">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="gymnasium"> Clubhouse</label>
+                                                <input type="checkbox" id="clubhouse" class="mb-0" name="clubhouse" value="Clubhouse">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="gymnasium"> Balcony</label>
+                                                <input type="checkbox" id="balcony" class="mb-0" name="balcony" value="Balcony">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="gymnasium"> High Speed Elevators</label>
+                                                <input type="checkbox" id="highspeedelevators" class="mb-0" name="highspeedelevators" value="High Speed Elevators">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="gymnasium"> Pre-School</label>
+                                                <input type="checkbox" id="preschool" class="mb-0" name="preschool" value="Pre-School">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="gymnasium"> Medical Facility</label>
+                                                <input type="checkbox" id="medicalfacility" class="mb-0" name="medicalfacility" value="Medical Facility">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="daycarecenter"> Day Care Center</label>
+                                                <input type="checkbox" id="daycarecenter" class="mb-0" name="daycarecenter" value="Day Care Center">
+                                            </div>
+                        
+                        
+                                            <div class="col-md-3 amenities">
+                                                <label for="petarea"> Pet Area</label>
+                                                <input type="checkbox" id="petarea" class="mb-0" name="petarea" value="Pet Area">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="indoorgames"> Indoor Games</label>
+                                                <input type="checkbox" id="indoorgames" class="mb-0" name="indoorgames" value="Indoor Games">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="conferenceroom"> Conference Room</label>
+                                                <input type="checkbox" id="conferenceroom" class="mb-0" name="conferenceroom" value="Conference Room">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="largegreenarea"> Large Green Area</label>
+                                                <input type="checkbox" id="largegreenarea" class="mb-0" name="largegreenarea" value="Large Green Area">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="conciergedesk"> Concierge Desk</label>
+                                                <input type="checkbox" id="conciergedesk" class="mb-0" name="conciergedesk" value="Concierge Desk">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="helipad"> Helipad</label>
+                                                <input type="checkbox" id="helipad" class="mb-0" name="helipad" value="Helipad">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="golfcourse"> Golf Course</label>
+                                                <input type="checkbox" id="golfcourse" class="mb-0" name="golfcourse" value="Golf Course">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="multiplex"> Multiplex</label>
+                                                <input type="checkbox" id="multiplex" class="mb-0" name="multiplex" value="Multiplex">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="visitorparking"> Visitor's Parking</label>
+                                                <input type="checkbox" id="visitorparking" class="mb-0" name="visitorparking" value="Visitor's Parking">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="servicedapartments"> Serviced Apartments</label>
+                                                <input type="checkbox" id="servicedapartments" class="mb-0" name="servicedapartments" value="Serviced Apartments">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="serviceelevators"> Service Elevators</label>
+                                                <input type="checkbox" id="serviceelevators" class="mb-0" name="serviceelevators" value="Service Elevators">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="highstreetretail"> High Street Retail</label>
+                                                <input type="checkbox" id="highstreetretail" class="mb-0" name="highstreetretail" value="High Street Retail">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="hypermarket"> Hypermarket</label>
+                                                <input type="checkbox" id="hypermarket" class="mb-0" name="hypermarket" value="Hypermarket">
+                                            </div>
+                                            
+                                            <div class="col-md-3 amenities">
+                                                <label for="atm"> ATM's</label>
+                                                <input type="checkbox" id="atm" class="mb-0" name="atm" value="ATM's">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="foodcourt"> Food Court</label>
+                                                <input type="checkbox" id="foodcourt" class="mb-0" name="foodcourt" value="Food Court">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="servantquarter"> Servant Quarter</label>
+                                                <input type="checkbox" id="servantquarter" class="mb-0" name="servantquarter" value="Servant Quarter">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="privatepool"> Private Pool</label>
+                                                <input type="checkbox" id="privatepool" class="mb-0" name="privatepool" value="Private Pool">
+                                            </div>
+                                            <div class="col-md-3 amenities">
+                                                <label for="privategym"> Private Gym</label>
+                                                <input type="checkbox" id="privategym" class="mb-0" name="privategym" value="Private Gym">
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6 add-room">
+                                                <label class="fieldlabels">Define Location</label>
+                                                <div data-toggle="buttons">
+                                                    <label class="btn checked-button">
+                                                      <input type="checkbox" name="schoolinvicinity" checked autocomplete="off">School in vicinity
+                                                    </label>
+                                                    <label class="btn checked-button">
+                                                      <input type="checkbox" name="metrostation" checked autocomplete="off"> Metro station
+                                                    </label>
+                                                    <label class="btn checked-button">
+                                                      <input type="checkbox" name="wideroad" checked autocomplete="off"> Wide Road
+                                                    </label>
+                                                    <label class="btn checked-button">
+                                                      <input type="checkbox" name="citycenter" checked autocomplete="off"> Near city center
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 add-room">
+                                                <label class="fieldlabels">Suitable For:</label>
+                                                <div data-toggle="buttons">
+                                                    <label class="btn checked-button">
+                                                      <input type="checkbox" name="family" checked autocomplete="off">Family
+                                                    </label>
+                                                    <label class="btn checked-button">
+                                                      <input type="checkbox" name="bachelor" checked autocomplete="off"> Bachelor
+                                                    </label>
+                                                    <label class="btn checked-button">
+                                                        <input type="checkbox" name="femaleonly" checked autocomplete="off"> Female Only
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <label class="fieldlabels">Description</label>
+                                                    <textarea rows="4" cols="5" class="form-control summernote" placeholder="Enter your message here"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="upload-image">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <p><b>Upload image</b></p>
+                                                <div>
+                                                    <input type="file" id="upload_file" name="upload_file[]" onchange="preview_image();" multiple/>
+                                                </div>
+                                                <div id="image_preview"></div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p><b>Upload Floor Plan</b></p>
+                                                <div>
+                                                    <input type="file" id="upload_floor" name="upload_file[]" onchange="preview_floor();" multiple/>
+                                                </div>
+                                                <div id="floor_preview"></div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p><b>Upload Master Plan</b></p>
+                                                <div>
+                                                    <input type="file" id="masterplan_file" name="upload_file[]" onchange="preview_masterplan();" multiple/>
+                                                </div>
+                                                <div id="masterplan_preview"></div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p><b>Upload Video</b></p>
+                                                <div>
+                                                    <input type="file" id="upload_video" name="upload_file" onchange="preview_video();"/>
+                                                </div>
+                                                <div id="video_preview"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <input type="button" class="action-button" value="Submit" /> 
+                            </form>
+                        </div>
+                    </div>
+				</div>
+				<% include ./common/side-notification %>		
+			</div>
+        </div>
+		<div class="sidebar-overlay" data-reff="#sidebar"></div>
+        <% include ./common/all-modals %>
+        <% include ./common/footer-script %>
+        <% include ./common/post-script %>
+        
+    </body>
+</html>

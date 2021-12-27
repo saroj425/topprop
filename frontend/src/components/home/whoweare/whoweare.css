@@ -1,0 +1,34 @@
+.whoweare{
+    position: relative;
+    margin-top: 30px;
+}
+.whowearecontent{
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    width: 90%;
+    padding: 40px;
+}
+.whowearecontent h2{
+    font-size: 3rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+}
+.whowearecontent p{
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+.whowearecontent a{
+    text-decoration: none;
+    font-size: 1.6rem;
+    padding: 5px 15px;
+    color: #ffff;
+    border: 1px solid #07D290;
+    margin-top: 30px;
+}

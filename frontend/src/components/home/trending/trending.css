@@ -1,0 +1,9 @@
+.toptrendingsec{
+    padding: 40px 0px;
+}
+.toptrendingtitle h2{
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}

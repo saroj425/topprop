@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+}
+body{
+  font-family: 'Source Sans Pro', sans-serif;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  background-image: linear-gradient(to bottom right, rgb(33,87,195), rgb(88,168,231));
+  overflow: hidden;
+}
+.curv-sec{
+  position: absolute;
+  bottom: 0;
+  left: -8px;
+  right: -15px;
+  height: 60vh;
+}
+.curv-sec img{
+  min-width: 100vw;
+}
+.login-sec{
+
+}
+.login-div{
+  max-width: 450px;
+  height: auto;
+  position: absolute;
+  top: 20%;
+  left: 55%;
+  right: 0;
+}
+.inner-login-div{
+  padding: 15px 30px;
+  border: 1px solid #d3d3d3;
+  border-radius: 50px;
+  margin-left: 10px;
+  background-color: #2A4A97;
+  color: #fff;
+  
+}
+.login-div h2{
+  margin: 0;
+  margin-bottom: 20px;
+}
+.otp-div{
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.otp{
+  border: none;
+  background-color: #ffdead00;
+  border-bottom: 2px solid #fff;
+  border-radius: 0;
+}
+.top-text{
+  margin-top:100px;
+  color: #fff;
+}
+.spanddiv span{
+  font-size: 1.8rem;
+  
+}
+.spanddiv{
+  margin-bottom: 20px;
+}
+.spanddiv span a{
+  font-size: 1.8rem;
+  color: #fff;  
+}
+.buttondiv{
+  margin: 0 auto;
+}
+.buttondiv button{
+  max-width: 180px;
+  margin: 0 auto;
+  background: #F8B613;
+  color: #000;
+  font-size: 1.8rem;
+  border-radius: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+      background-color: lightblue;
+    }
+    .curv-sec{
+      position: absolute;
+      top: 79%;
+      bottom: 0;
+      left: 0px;
+      right: 0px;
+      height: 80vh;
+    }
+    .login-div {
+      max-width: 300px;
+      height: auto;
+      margin: 0 auto;
+      padding: 15px;
+      position: absolute;
+      top: 30%;
+      left: 0%;
+      right: 0;
+      border: 1px solid #d3d3d3;
+      border-radius: 20px;
+      background-color: #2A4A97;
+      color: #fff;
+  }
+}

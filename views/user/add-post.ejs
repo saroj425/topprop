@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+        <title>Dashboard - Top Prop Mart</title>
+		<% include ./common/header-script %>
+    </head>
+    <body>
+        <div class="main-wrapper">
+            <% include ./common/header %>
+            <% include ./common/vendor-side-menu %>
+            <div class="page-wrapper">
+                <div class="content container-fluid">
+					<div class="row">
+						<div class="col-md-12">
+							<h2>All Posts</h2>
+						</div>
+					</div>
+                    <div class="row">
+                        <div class="col-md-12 post-div">
+                            <form id="msform" action="" method="post">
+                                <!-- progressbar -->
+                                <div class="">
+                                    <ul id="progressbar">
+                                        <li class="active" id="account"><strong>Property Details</strong></li>
+                                        <li id="personal"><strong>Additional Details</strong></li>
+                                        <li id="payment"><strong>Amenities</strong></li>
+                                    </ul>
+                                </div>
+                                <fieldset>
+                                    <div class="form-card">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h2 class="fs-title">Provide details about your Property:</h2>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 ">
+                                                <p>Looking For</p>
+                                                <div class="radio-div">
+                                                    <input type="radio" id="radio-btn-1" name="radio-btns-sale">
+                                                    <label for="radio-btn-1" class="btn">Sale</label>
+                                                    <input type="radio" id="radio-btn-2" name="radio-btns-rent">
+                                                    <label for="radio-btn-2" class="btn">Rent</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <p>Building Type</p>
+                                                <div class="radio-div">
+                                                    <input type="radio" id="radio-btn-3" name="building-type" value="residential" onclick="residential()">
+                                                    <label for="radio-btn-3" class="btn" onclick="residential()">Residential</label>
+                                                    <input type="radio" id="radio-btn-4" name="building-type" value="commercial" onclick="commercial()">
+                                                    <label for="radio-btn-4" class="btn" onclick="commercial()">Commercial</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-12 d-none" id="res-div">
+                                                <p>Residential Type</p>
+                                                <div class="radio-div ">
+                                                    <input type="radio" id="radio-btn-5" name="radio-btns">
+                                                    <label for="radio-btn-5" class="btn" onclick="showaptsize()">Apartment</label>
+                                                    <input type="radio" id="radio-btn-6" name="radio-btns">
+                                                    <label for="radio-btn-6" class="btn">Villa</label>
+                                                    <input type="radio" id="radio-btn-7" name="radio-btns">
+                                                    <label for="radio-btn-7" class="btn">Plot</label>
+                                                    <input type="radio" id="radio-btn-8" name="radio-btns">
+                                                    <label for="radio-btn-8" class="btn">Builder Floor</label>
+                                                    <input type="radio" id="radio-btn-9" name="radio-btns">
+                                                    <label for="radio-btn-9" class="btn">Independent House</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-12 d-none" id="com-div">
+                                                <p>Commercial Type</p>
+                                                <div class="radio-div">
+                                                    <input type="radio" id="radio-btn-10" name="radio-btns">
+                                                    <label for="radio-btn-10" class="btn">Office Space</label>
+                                                    <input type="radio" id="radio-btn-11" name="radio-btns">
+                                                    <label for="radio-btn-11" class="btn">Shop</label>
+                                                    <input type="radio" id="radio-btn-12" name="radio-btns">
+                                                    <label for="radio-btn-12" class="btn">Land</label>
+                                                    <input type="radio" id="radio-btn-13" name="radio-btns">
+                                                    <label for="radio-btn-13" class="btn">Office Space in IT/SEZ</label>
+                                                    <input type="radio" id="radio-btn-14" name="radio-btns">
+                                                    <label for="radio-btn-14" class="btn">Showroom</label>
+                                                    <input type="radio" id="radio-btn-15" name="radio-btns">
+                                                    <label for="radio-btn-15" class="btn">Warehouse</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <label class="fieldlabels">City: *</label> 
+                                        <input type="text" name="city" placeholder="Please enter city name" /> 
+                                        <label class="fieldlabels">Project/Building Name: *</label> 
+                                        <input type="text" name="projectname" placeholder="Please enter project name" /> 
+                                        <label class="fieldlabels">Locality: *</label> 
+                                        <input type="text" name="locality" placeholder="Please enter project locality" /> 
+                                        <label class="fieldlabels">Price: *</label>
+                                        <input type="number" name="price" placeholder="Please enter project price" />
+                                        <div class="row d-none" id="res-details">
+                                            <div class="col-md-6">
+                                                <label class="fieldlabels">Please Select the Unit type and Configuration</label>
+                                                <select name="unittype" class="form-control" id="">
+                                                    <option value="">Select unit type</option>
+                                                    <option value="">1 BHK</option>
+                                                    <option value="">2 BHK</option>
+                                                    <option value="">3 BHK</option>
+                                                    <option value="">4 BHK</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label class="fieldlabels">Size: *</label>
+                                                <input type="text" name="size" placeholder="Please enter buildup size" />
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <input type="button" name="next" class="next action-button" value="Next" />
+                                </fieldset>
+                                <fieldset>
+                                    <div class="form-card">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <h2 class="fs-title">Additional Details:</h2>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        Upload image
+                                                        <div>
+                                                            <input type="file" id="upload_file" name="upload_file[]" onchange="preview_image();" multiple/>
+                                                        </div>
+                                                        <div id="image_preview"></div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        Upload Floor Plan
+                                                        <div>
+                                                            <input type="file" id="upload_floor" name="upload_file[]" onchange="preview_floor();" multiple/>
+                                                        </div>
+                                                        <div id="floor_preview"></div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        Upload Master Plan
+                                                        <div>
+                                                            <input type="file" id="masterplan_file" name="upload_file[]" onchange="preview_masterplan();" multiple/>
+                                                        </div>
+                                                        <div id="masterplan_preview"></div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        Upload Video
+                                                        <div>
+                                                            <input type="file" id="upload_video" name="upload_file" onchange="preview_video();"/>
+                                                        </div>
+                                                        <div id="video_preview"></div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <p><b>Additional Rooms</b></p>
+                                                        <div class="add-room">
+                                                            <div data-toggle="buttons">
+                                                                <label class="btn checked-button">
+                                                                  <input type="checkbox" name="poojaroom" checked autocomplete="off">Pooja Room
+                                                                </label>
+                                                                <label class="btn checked-button">
+                                                                  <input type="checkbox" name="serventroom" checked autocomplete="off"> Servant Room
+                                                                </label>
+                                                                <label class="btn checked-button">
+                                                                  <input type="checkbox" name="studyroom" checked autocomplete="off"> Study Room
+                                                                </label>
+                                                                <label class="btn checked-button">
+                                                                  <input type="checkbox" name="extraroom" checked autocomplete="off"> Extra Room
+                                                                </label>
+                                                              </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <p><b>Possession Status</b></p>
+                                                        <div class="pos-status">
+                                                            <div class="radio-div">
+                                                                <input type="radio" id="radio-btn-16" name="radio-btns">
+                                                                <label for="radio-btn-16" class="btn">Ready To Move</label>
+                                                                <input type="radio" id="radio-btn-17" name="radio-btns">
+                                                                <label for="radio-btn-17" class="btn">Under Construction</label> 
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <p><b>Furnishing Status</b></p>
+                                                        <div class="pos-status">
+                                                            <div class="radio-div">
+                                                                <input type="radio" id="radio-btn-18" name="radio-btns">
+                                                                <label for="radio-btn-18" class="btn">Furnished</label>
+                                                                <input type="radio" id="radio-btn-19" name="radio-btns">
+                                                                <label for="radio-btn-19" class="btn">Semi-Furnished</label>
+                                                                <input type="radio" id="radio-btn-20" name="radio-btns">
+                                                                <label for="radio-btn-20" class="btn">Unfurnished</label> 
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <p><b>Age of Property (Years)</b></p>
+                                                        <div class="pos-status">
+                                                            <div class="radio-div">
+                                                                <input type="radio" id="radio-btn-21" name="radio-btns">
+                                                                <label for="radio-btn-21" class="btn">0-1</label>
+                                                                <input type="radio" id="radio-btn-22" name="radio-btns">
+                                                                <label for="radio-btn-22" class="btn">2-4</label>
+                                                                <input type="radio" id="radio-btn-23" name="radio-btns">
+                                                                <label for="radio-btn-23" class="btn">5-7</label>
+                                                                <input type="radio" id="radio-btn-24" name="radio-btns">
+                                                                <label for="radio-btn-24" class="btn">8-10</label>
+                                                                <input type="radio" id="radio-btn-25" name="radio-btns">
+                                                                <label for="radio-btn-25" class="btn">10+</label>  
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <p><b>Number of Rooms</b></p>
+                                                        <div class="pos-status">
+                                                            <div class="radio-div">
+                                                                <input type="radio" id="radio-btn-26" name="radio-btns">
+                                                                <label for="radio-btn-26" class="btn">Studio</label>
+                                                                <input type="radio" id="radio-btn-27" name="radio-btns">
+                                                                <label for="radio-btn-27" class="btn">1</label>
+                                                                <input type="radio" id="radio-btn-28" name="radio-btns">
+                                                                <label for="radio-btn-28" class="btn">1.5</label>
+                                                                <input type="radio" id="radio-btn-29" name="radio-btns">
+                                                                <label for="radio-btn-29" class="btn">2</label>
+                                                                <input type="radio" id="radio-btn-30" name="radio-btns">
+                                                                <label for="radio-btn-30" class="btn">2.5</label>
+                                                                <input type="radio" id="radio-btn-31" name="radio-btns">
+                                                                <label for="radio-btn-31" class="btn">3</label>
+                                                                <input type="radio" id="radio-btn-32" name="radio-btns">
+                                                                <label for="radio-btn-32" class="btn">3.5</label>
+                                                                <input type="radio" id="radio-btn-33" name="radio-btns">
+                                                                <label for="radio-btn-33" class="btn">4</label>
+                                                                <input type="radio" id="radio-btn-34" name="radio-btns">
+                                                                <label for="radio-btn-34" class="btn">5</label>
+                                                                <input type="radio" id="radio-btn-35" name="radio-btns">
+                                                                <label for="radio-btn-35" class="btn">6</label> 
+                                                                <input type="radio" id="radio-btn-36" name="radio-btns">
+                                                                <label for="radio-btn-36" class="btn">6+</label>  
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <p><b>Number of Bathroom</b></p>
+                                                        <div class="pos-status">
+                                                            <div class="radio-div">
+                                                                <input type="radio" id="radio-btn-37" name="radio-btns">
+                                                                <label for="radio-btn-37" class="btn">1</label>
+                                                                <input type="radio" id="radio-btn-38" name="radio-btns">
+                                                                <label for="radio-btn-38" class="btn">2</label>
+                                                                <input type="radio" id="radio-btn-39" name="radio-btns">
+                                                                <label for="radio-btn-39" class="btn">3</label>
+                                                                <input type="radio" id="radio-btn-40" name="radio-btns">
+                                                                <label for="radio-btn-40" class="btn">4</label>
+                                                                <input type="radio" id="radio-btn-41" name="radio-btns">
+                                                                <label for="radio-btn-41" class="btn">5</label>
+                                                                <input type="radio" id="radio-btn-42" name="radio-btns">
+                                                                <label for="radio-btn-42" class="btn">6</label> 
+                                                                <input type="radio" id="radio-btn-43" name="radio-btns">
+                                                                <label for="radio-btn-43" class="btn">6+</label>  
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <p><b>Number of Parking</b></p>
+                                                        <div class="pos-status">
+                                                            <div class="radio-div">
+                                                                <input type="radio" id="radio-btn-44" name="radio-btns">
+                                                                <label for="radio-btn-44" class="btn">1</label>
+                                                                <input type="radio" id="radio-btn-45" name="radio-btns">
+                                                                <label for="radio-btn-45" class="btn">2</label>
+                                                                <input type="radio" id="radio-btn-46" name="radio-btns">
+                                                                <label for="radio-btn-46" class="btn">3</label>
+                                                                <input type="radio" id="radio-btn-47" name="radio-btns">
+                                                                <label for="radio-btn-47" class="btn">4</label>
+                                                                <input type="radio" id="radio-btn-48" name="radio-btns">
+                                                                <label for="radio-btn-48" class="btn">5</label>
+                                                                <input type="radio" id="radio-btn-49" name="radio-btns">
+                                                                <label for="radio-btn-49" class="btn">6</label> 
+                                                                <input type="radio" id="radio-btn-50" name="radio-btns">
+                                                                <label for="radio-btn-50" class="btn">6+</label>  
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <label class="fieldlabels">View /Facing: *</label>
+                                                        <select name="view-facing" id="" class="form-control">
+                                                            <option value="">Select View/Facing</option>
+                                                            <option value="">Beach View</option>
+                                                            <option value="">East</option>
+                                                            <option value="">Garden Facing</option>
+                                                            <option value="">Golf Course</option>
+                                                            <option value="">North</option>
+                                                            <option value="">North East</option>
+                                                            <option value="">North West</option>
+                                                            <option value="">Park Facing</option>
+                                                            <option value="">South</option>
+                                                            <option value="">South East</option>
+                                                            <option value="">South West</option>
+                                                            <option value="">West</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label class="fieldlabels">Floor No: *</label>
+                                                        <input type="text" name="size" placeholder="Please enter buildup size" />
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label class="fieldlabels">Tower/Block: *</label>
+                                                        <input type="text" name="size" placeholder="Please enter buildup size" />
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label class="fieldlabels">Total Floor Count: *</label>
+                                                        <input type="text" name="size" placeholder="Please enter buildup size" />
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <label class="fieldlabels">Unit No: *</label>
+                                                        <input type="text" name="size" placeholder="Please enter buildup size" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> 
+                                    </div> 
+                                    <input type="button" name="next" class="next action-button" value="Next" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                                </fieldset>
+                                <fieldset>
+                                    <div class="form-card">
+                                        <div class="row">
+                                            
+                                        </div>
+                                    </div> 
+                                    <input type="button" name="next" class="next action-button" value="Submit" /> <input type="button" name="previous" class="previous action-button-previous" value="Previous" />
+                                </fieldset>
+                                <fieldset>
+                                    <div class="form-card">
+                                        <div class="row">
+                                            <div class="col-7">
+                                                <h2 class="fs-title">Finish:</h2>
+                                            </div>
+                                            <div class="col-5">
+                                                <h2 class="steps">Step 4 - 4</h2>
+                                            </div>
+                                        </div> <br><br>
+                                        <h2 class="purple-text text-center"><strong>SUCCESS !</strong></h2> <br>
+                                        <div class="row justify-content-center">
+                                            <div class="col-3"> <img src="https://i.imgur.com/GwStPmg.png" class="fit-image"> </div>
+                                        </div> <br><br>
+                                        <div class="row justify-content-center">
+                                            <div class="col-7 text-center">
+                                                <h5 class="purple-text text-center">You Have Successfully Signed Up</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                    </div>
+				</div>
+				<% include ./common/side-notification %>		
+			</div>
+        </div>
+		<div class="sidebar-overlay" data-reff="#sidebar"></div>
+        <% include ./common/footer-script %>
+        <script>
+            // Progress bar Start
+            $(document).ready(function(){
+                var current_fs, next_fs, previous_fs; //fieldsets
+                var opacity;
+                var current = 1;
+                var steps = $("fieldset").length;
+                setProgressBar(current);
+                $(".next").click(function(){
+                current_fs = $(this).parent();
+                next_fs = $(this).parent().next();
+                //Add Class Active
+                $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+                //show the next fieldset
+                next_fs.show();
+                //hide the current fieldset with style
+                current_fs.animate({opacity: 0}, {
+                step: function(now) {
+                // for making fielset appear animation
+                opacity = 1 - now;
+                current_fs.css({
+                'display': 'none',
+                'position': 'relative'
+                });
+                next_fs.css({'opacity': opacity});
+                },
+                duration: 500
+                });
+                setProgressBar(++current);
+                });
+                $(".previous").click(function(){
+                current_fs = $(this).parent();
+                previous_fs = $(this).parent().prev();
+                //Remove class active
+                $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+                //show the previous fieldset
+                previous_fs.show();
+                //hide the current fieldset with style
+                current_fs.animate({opacity: 0}, {
+                step: function(now) {
+                // for making fielset appear animation
+                opacity = 1 - now;
+                current_fs.css({
+                'display': 'none',
+                'position': 'relative'
+                });
+                previous_fs.css({'opacity': opacity});
+                },
+                duration: 500
+                });
+                setProgressBar(--current);
+                });
+
+                function setProgressBar(curStep){
+                var percent = parseFloat(100 / steps) * curStep;
+                percent = percent.toFixed();
+                $(".progress-bar")
+                .css("width",percent+"%")
+                }
+                $(".submit").click(function(){
+                return false;
+                })
+
+                $('#radio-btn-3').click(function(){
+                    $(res-div).show();
+                    $(com-div).hide();
+                });
+            });
+            // Progress bar end
+            // Checkbox button toggle
+            
+            $('[data-toggle="buttons"] .btn').on('click', function () {
+                // toggle style
+                $(this).toggleClass('checked-button active');
+                
+                // toggle checkbox
+                var $chk = $(this).find('[type=checkbox]');
+                $chk.prop('checked',!$chk.prop('checked'));
+                
+                return false;
+            });
+
+            $('form').on('submit',function(e){
+                // watch form values
+                $('#formValues').html(($('form').serialize()));
+                e.preventDefault();
+            });
+
+            // Checkbox button toggle end
+
+
+
+            // Residential and commercial  Checkbox
+            function residential(){
+                document.getElementById('res-div').style.display ='block';
+                document.getElementById('com-div').style.display ='none';
+            }
+            function commercial(){
+                document.getElementById('res-div').style.display ='none';
+                document.getElementById('com-div').style.display ='block';
+            }
+            function showaptsize(){
+                document.getElementById('res-details').style.display ='block';
+            }
+
+            function preview_image() 
+            {
+                var total_file=document.getElementById("upload_file").files.length;
+                for(var i=0;i<total_file;i++)
+                {
+                    $('#image_preview').append("<img src='"+URL.createObjectURL(event.target.files[i])+"'><br>");
+                }
+            }
+            function preview_floor() 
+            {
+                var total_file=document.getElementById("upload_floor").files.length;
+                for(var i=0;i<total_file;i++)
+                {
+                    $('#floor_preview').append("<img src='"+URL.createObjectURL(event.target.files[i])+"'><br>");
+                }
+            }
+            function preview_masterplan() 
+            {
+                var total_file=document.getElementById("masterplan_file").files.length;
+                for(var i=0;i<total_file;i++)
+                {
+                    $('#masterplan_preview').append("<img src='"+URL.createObjectURL(event.target.files[i])+"'><br>");
+                }
+            }
+            function preview_video() 
+            {
+                var total_file=document.getElementById("upload_video");
+                $('#video_preview').append("<video src='"+URL.createObjectURL(event.target.files)+"'><br>");
+            }
+            
+            // Residential and commercial  Checkbox
+        </script>
+    </body>
+</html>

@@ -1,0 +1,137 @@
+.hwoitworks{
+    background: #f2f5f6;
+    text-align: center;
+    padding: 50px;
+}
+.container-div{
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.hwoitworks h2{
+    font-size: 4rem;
+    font-weight: 500;
+}
+.hwoitworks p{
+    font-size: 1.7rem;
+    font-weight: 400;
+}
+.hwoitworks-inner{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.how-div{
+    min-height: 150px;
+    min-width: 250px;
+    background-color: #fff;
+    position: relative;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 30px;
+}
+.how-div-inner{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    border-bottom-left-radius: 50%;
+    border-top-right-radius: 50%;
+    background-color: #F2F5F6;
+}
+.allprop{
+    padding: 40px 0px;
+}
+.allpropcard{
+    width: 95% !important;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 10px;
+}
+.allcardbody p{
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+.allcardbody small{
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.allprice p{
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.allprop-tag{
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+.allprop-tag p{
+    background: #F2C31E;
+    color: #000;
+    font-size: 1.4rem;
+    padding: 2px 10px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.allshortlist{
+    padding: 2px 5px;
+    margin-top: 10px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    background-color: #EAEAEA;
+}
+.alldetails{
+    padding: 2px 5px;
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-top: 10px;
+    background-color: #07D290;
+    border: 1px solid #07D290;
+    border-radius: 5px;
+}
+.allright{
+    margin-top: 20px;
+    left: -5%;
+}
+.allleft{
+    padding: 30px 10px;
+    min-height: 275px;
+    margin: 0 auto;
+    background: #1A55B1;
+    border-radius: 20px;
+}
+.allleft div{
+    width: 75%;
+    padding: 10px;
+}
+.allleft div h2{
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.allleft div p{
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.allleft div .viewmore{
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    padding: 5px 15px;
+    font-size: 1.6rem;
+    margin-top: 20px;
+}
+.slick-next:before {
+    font-family: 'slick' !important;
+    font-size: 25px !important;
+    line-height: 1 !important;
+    opacity: .75 !important;
+    color: #ada9a9 !important;
+    -webkit-font-smoothing: antialiased !important;
+}
+.slick-next {
+    width: 25px !important;
+    height: 25px !important;
+}

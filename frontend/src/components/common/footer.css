@@ -1,0 +1,49 @@
+.footersec{
+    background: #000000;
+    padding: 40px 0px;
+    color: #fff;
+    position: relative;
+}
+.footersec h4{
+    font-size: 2rem;
+    font-weight: 600;
+}
+.footersec ul{
+    list-style: none;
+    padding-left: 0px;
+}
+.footersec ul li{
+    font-size: 1.6rem;
+    font-weight: 400;
+    text-indent: 0px;
+}
+.footersec .form-inline .form-control{
+    font-size: 1.5rem;
+
+}
+.footersec .form-inline .btn{
+    font-size: 1.5rem;
+}
+.footersec .social ul{
+    display: flex;
+    
+}
+.footersec .social ul li{
+    margin: 5px 5px;
+}
+.footersec ul li a{
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+}
+.bottom-footer{
+    border-top: 4px solid #6e6a6a;
+    padding:40px 0px
+}
+.footer-img{
+    position: absolute;
+    top: 10%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}

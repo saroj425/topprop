@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+        <title>Dashboard - Top Prop Mart</title>
+		<% include ./common/header-script %>
+    </head>
+    <body>
+        <div class="main-wrapper">
+            <% include ./common/header %>
+            <% include ./common/side-menu %>
+            <div class="page-wrapper">
+                <div class="content container-fluid">
+					<div class="row">
+						<div class="col-md-12" style="margin-bottom: 40px;">
+							<div class="adminpage-heading">
+                                <div>
+                                    <h2>Add Testinomial</h2>
+                                </div>
+                            </div>
+						</div>
+					</div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form class="m-b-30" action="/add-testinomial" method="POST">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Title<span class="text-danger">*</span></label>
+                                            <input class="form-control" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Description<span class="text-danger">*</span></label>
+                                            <textarea name="" id="" class="form-control" rows="3"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Author</label>
+                                            <input class="form-control" type="password">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label class="control-label">Image</label>
+                                            <input class="form-control" type="file">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="m-t-20 text-center">
+                                    <button class="btn btn-primary">Create Testinomial</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+				</div>
+				<% include ./common/side-notification %>		
+			</div>
+        </div>
+		<div class="sidebar-overlay" data-reff="#sidebar"></div>
+        <% include ./common/all-modals %>
+        <% include ./common/footer-script %>
+    </body>
+</html>

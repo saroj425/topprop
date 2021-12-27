@@ -1,0 +1,412 @@
+.adminpage-heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background: cyan; */
+}
+
+.adminpage-heading .btn-add{
+    border: 2px solid #fff;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 1.7rem;
+}
+.adminpage-heading .btn-add a{
+    color: #000;
+}
+
+#heading {
+    text-transform: uppercase;
+    color: #673AB7;
+    font-weight: normal
+}
+
+#msform {
+    text-align: center;
+    position: relative;
+    margin-top: 20px
+}
+
+#msform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 20px;
+    position: relative
+}
+
+.form-card {
+    background-color: #fefdfd;
+    text-align: left;
+    padding: 20px;
+}
+.prop-details,.aditional-details,.aminities,.upload-image{
+    padding: 20px 40px;
+    border: 2px solid #d3d3d3;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+#msform fieldset:not(:first-of-type) {
+    display: none
+}
+#msform input,
+#msform textarea,select {
+    padding: 8px 15px 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    margin-bottom: 25px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    font-size: 16px;
+    letter-spacing: 1px
+}
+#msform input:focus,
+#msform textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0
+}
+#msform .action-button {
+    width: 100px;
+    background: #000;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 30px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 10px 10px 5px;
+    float: right
+}
+#msform .action-button:hover,
+#msform .action-button:focus {
+    background-color: #311B92
+}
+#msform .action-button-previous {
+    width: 100px;
+    background: #000;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 30px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 10px 10px 5px;
+    float: right;
+}
+#msform .action-button-previous:hover,
+#msform .action-button-previous:focus {
+    background-color: #000000
+}
+.card {
+    z-index: 0;
+    border: none;
+    position: relative
+}
+.fs-title {
+    font-size: 25px;
+    color: #000;
+    margin-bottom: 25px;
+    font-weight: 400;
+    text-align: left
+}
+.purple-text {
+    color: #673AB7;
+    font-weight: normal
+}
+.steps {
+    font-size: 25px;
+    color: gray;
+    margin-bottom: 10px;
+    font-weight: normal;
+    text-align: right
+}
+.fieldlabels {
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: left;
+    margin-bottom: 10px;
+}
+.div-prog{
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+#progressbar {
+    /* margin-bottom: 30px; */
+    overflow: hidden;
+    color: lightgrey;
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    padding: 10px;
+}
+
+#progressbar .active {
+    /* color: #673AB7 */
+    color: #FF4343;
+}
+
+#progressbar li {
+    list-style-type: none;
+    font-size: 15px;
+    /* width: 25%; */
+    width: 34%;
+    float: left;
+    position: relative;
+    font-weight: 400
+}
+
+#progressbar #account:before {
+    font-family: FontAwesome;
+    content: "\f015"
+}
+
+#progressbar #personal:before {
+    font-family: FontAwesome;
+    content: "\f015"
+}
+
+#progressbar #payment:before {
+    font-family: FontAwesome;
+    content: "\f015"
+}
+
+#progressbar #confirm:before {
+    font-family: FontAwesome;
+    content: "\f015"
+}
+
+#progressbar li:before {
+    width: 50px;
+    height: 50px;
+    line-height: 45px;
+    display: block;
+    font-size: 20px;
+    color: #ffffff;
+    background: lightgray;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    padding: 2px
+}
+
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: lightgray;
+    position: absolute;
+    left: 0;
+    top: 25px;
+    z-index: -1
+}
+#progressbar li.active:before,
+#progressbar li.active:after {
+    background: #FF4343
+}
+.progress {
+    height: 20px
+}
+.progress-bar {
+    background-color: #FF4343
+}
+.fit-image {
+    width: 100%;
+    object-fit: cover
+}
+.form-card p b{
+    font-size: 1.8rem;
+}
+
+
+.radio-div{
+    padding: 5px 0px;
+    margin-bottom: 15px;
+}
+.radio-div input[type=radio]{display:none;}
+.radio-div input[type=radio] + label.btn{
+    padding: 5px 20px;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    background: #FF4343;
+    color: #fff;
+    /* box-shadow: 0 6px #FF4343; */
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    }
+.radio-div input[type=radio] + label.btn:hover{
+    box-shadow: 0 4px #FF4343;
+    background: #000;
+    top: 2px;
+    }
+.radio-div input[type=radio]:checked + label.btn{
+    box-shadow: 0 0 #FF4343;
+    background: #000;
+    top: 0px;
+    } 
+/* .radio-div input[type=radio] + label.btn::before{
+    font-family: FontAwesome;
+    content: "\f015"
+} */
+.d-none{
+    display: none;
+}
+#image_preview{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+#image_preview img{
+    max-width: 22%;
+    margin: 10px;
+    border: 2px solid gray;
+}
+#floor_preview{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+#floor_preview img{
+    max-width: 22%;
+    margin: 10px;
+    border: 2px solid gray;
+}
+#masterplan_preview{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+}
+#masterplan_preview img{
+    max-width: 22%;
+    margin: 10px;
+    border: 2px solid gray;
+}
+#img_preview video{
+    max-width: 25%;
+}
+.checked-button{
+    background: #000;
+    color: #fff;
+    border-radius: 20px;
+}
+.add-room{
+    margin-bottom: 20px;
+}
+.add-room .btn{
+    box-shadow: 0 0 #ff4343;
+    background: #0000009e;
+    top: 0px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 5px;
+}
+.add-room .btn:active{
+    box-shadow: 0 0 #ff4343;
+    background: #000;
+    top: 0px;
+    border-radius: 20px;
+}
+.add-room .checked-button{
+    background: #ff4343;
+    color: #fff;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+.add-room .checked-button:active{
+    box-shadow: 0 0 #ff4343;
+    background: #000;
+    top: 0px;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+.amenities{
+    display:flex;
+    justify-content: space-between;
+    margin: 15px auto;
+    position: relative;
+}
+.amenities input[type=checkbox]{
+    width: auto;
+    opacity: 0.00000001;
+    position: absolute;
+    left: 0;
+    margin-left: -20px;
+}
+.amenities label {
+    position: relative;
+}
+.amenities label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 4px;
+    width: 22px;
+    height: 22px;
+    transition: transform 0.28s ease;
+    border-radius: 3px;
+    border: 2px solid #7bbe72;
+}
+.amenities label:after {
+    content: '';
+      display: block;
+      width: 10px;
+      height: 5px;
+      border-bottom: 2px solid #7bbe72;
+      border-left: 2px solid #7bbe72;
+      -webkit-transform: rotate(-45deg) scale(0);
+      transform: rotate(-45deg) scale(0);
+      transition: transform ease 0.25s;
+      will-change: transform;
+      position: absolute;
+      top: 12px;
+      left: 10px;
+  }
+  .amenities input[type="checkbox"]:checked ~ label::before {
+      color: #7bbe72;
+  }
+  
+  .amenities input[type="checkbox"]:checked ~ label::after {
+      -webkit-transform: rotate(-45deg) scale(1);
+      transform: rotate(-45deg) scale(1);
+  }
+  
+  .amenities label {
+      min-height: 34px;
+      display: block;
+      padding-left: 40px;
+      margin-bottom: 0;
+      font-weight: normal;
+      cursor: pointer;
+      vertical-align: sub;
+  }
+  .amenities label span {
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+  }
+  .amenities input[type="checkbox"]:focus + label::before {
+      outline: 0;
+  }
+

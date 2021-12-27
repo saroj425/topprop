@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+        <title>Dashboard - Top Prop Mart</title>
+		<% include ../common/header-script %>
+    </head>
+    <body>
+        <div class="main-wrapper">
+            <% include ../common/header %>
+            <% include ../common/vendor-side-menu %>
+            <div class="page-wrapper">
+                <div class="content container-fluid">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="adminpage-heading">
+                                <div>
+                                    <h2>All Users</h2>
+                                </div>
+                                <!-- <div class="btn-add">
+                                    <a href="#" data-toggle="modal" data-target="#add_employee">Add User</a>
+                                </div> -->
+                            </div>
+						</div>
+					</div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-table">
+								<!-- <div class="panel-heading">
+									<h3 class="panel-title">Clients</h3>
+								</div> -->
+								<div class="panel-body">
+									<div class="table-responsive">
+										<table class="table table-striped custom-table m-b-0">
+											<thead>
+												<tr>
+													<th style="min-width:200px;">Name</th>
+													<th>Email</th>
+                                                    <th>Mobile</th>
+                                                    <th>Address</th>
+													<th>Status</th>
+													<th class="text-right">Action</th>
+												</tr>
+											</thead>
+											<tbody style="min-height: 200px;">
+                                                    <tr>
+                                                        <td style="min-width:200px;">
+                                                            <a href="#" class="avatar">S</a>
+                                                            <h2><a href="client-profile.html">Saroj Kumar Pandey</a></h2>
+                                                        </td>
+                                                        <td>saroj@mildain.in</td>
+                                                        <td>7889988798</td>
+                                                        <td>Address</td>
+                                                        <td>
+                                                            <div class="dropdown action-label">
+                                                                <a class="btn btn-white btn-sm rounded dropdown-toggle" href="#" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-dot-circle-o text-success"></i> Active <i class="caret"></i>
+                                                                </a>
+                                                                <ul class="dropdown-menu pull-right">
+                                                                    <li><a href="#" data-toggle="modal" data-target="#block_user"><i class="fa fa-dot-circle-o text-success"></i> Active</a></li>
+                                                                    <li><a href="#" data-toggle="modal" data-target="#block_user"><i class="fa fa-dot-circle-o text-danger"></i> Inactive</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-right">
+                                                            <div class="dropdown">
+                                                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                                                <ul class="dropdown-menu pull-right">
+                                                                    <li><a href="#" data-toggle="modal" data-target="#edit_user" title="Edit"><i class="fa fa-pencil m-r-5"></i>Edit</a></li>
+                                                                    <li><a href="#" data-toggle="modal" data-target="#delete_user" title="Delete"><i class="fa fa-trash-o m-r-5"></i> Delete</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<!-- <div class="panel-footer">
+									<a href="" class="text-primary">View all clients</a>
+								</div> -->
+							</div>
+                        </div>
+                    </div>
+				</div>
+				<% include ../common/side-notification %>		
+			</div>
+        </div>
+		<div class="sidebar-overlay" data-reff="#sidebar"></div>
+        <% include ../common/all-modals %>
+        <% include ../common/footer-script %>
+    </body>
+</html>
